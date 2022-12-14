@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog-Item</title>
+    <link rel="shortcut icon" href="./img/home/Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" type="text/tailwindcss" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+      @layer components {
+        .btn-tag {
+          @apply md:text-[8px] text-[7px] font-semibold  py-[3px] lg:px-[10px] md:px-[8px] px-[7px] shadow  bg-white text-black font-semibold rounded-full  hover:bg-white hover:text-black focus:outline-none focus:ring-1 focus:ring-black focus:ring-opacity-75 border-[0.1px] border-gray-300;
+        }
+        .section-title {
+          @apply text-center mx-auto pb-8;
+        }
+        .title {
+          @apply text-[#F58220] text-lg font-medium mb-1.5;
+        }
+        .title-text {
+          @apply font-normal text-sm leading-4;
+        }
+        .input-field {
+          @apply px-4 py-4 text-lg text-[#F58220] leading-4 font-normal bg-white border border-[1] border-black bg-white rounded text-black focus:outline-none focus:ring focus:ring-1 focus:ring-[#e27900] focus:border-transparent;
+        }
+        .pragraph {
+          @apply text-base font-normal leading-6;
+        }
+        .cat-title {
+          @apply md:text-[10px] text-[8px] text-[#F58220] font-semibold;
+        }
+        .hd {
+          display: none;
+        }
+        .hd1 {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header  -->
+    <header class="shadow" style="font-family: 'Roboto', sans-serif">
+      <div
+        class="container mx-auto md:flex justify-start items-center h-20 md:mb-8 mb-4 px-6 md:px-0"
+      >
+        <div class="flex justify-between items-center">
+          <a href="/index.html"> <img src="./img/home/Logo.png" alt="" /></a>
+
+          <span class="text-3xl cursor-pointer md:hidden mx-2 block">
+            <img
+              name="menu"
+              onclick="Menu(this)"
+              id="humburger-btn"
+              src="./img/hide.png"
+              alt=""
+            />
+
+            <span name="menu" onclick="Menu(this)" class="hd" id="close-btn">
+              <img class="w-5 h-5" src="./img/show.png" alt="" />
+            </span>
+          </span>
+        </div>
+        <div>
+          <ul
+            class="md:flex md:items-center justify-center z-[999] md:z-auto md:static absolute bg-black md:bg-white w-full left-0 py-5 md:py-0 md:w-auto md:py-0 py-5 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in delay-300 -mt-4 md:mt-5"
+          >
+            <li class="md:px-[30px] lg:px-[64px] py-4 md:py-0">
+              <a
+                href="/index.html"
+                class="hover hover:text-[#F58220] hover:border-b-2 border-b-[#F58220] delay-300 text-base font-normal text-white md:text-black"
+                >Home</a
+              >
+            </li>
+            <li class="md:px-[30px] lg:px-[64px] py-4 md:py-0">
+              <a
+                href="#"
+                class="hover hover:text-[#F58220] hover:border-b-2 border-b-[#F58220] delay-300 text-base font-normal text-white md:text-black"
+                >Aanvraag</a
+              >
+            </li>
+            <li class="md:px-[30px] lg:px-[64px] py-4 md:py-0">
+              <a
+                href="/contact.html"
+                class="hover hover:text-[#F58220] hover:border-b-2 border-b-[#F58220] delay-300 text-base font-normal text-white md:text-black"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main
+      class="container mx-auto px-6 lg:px-0"
+      style="font-family: 'Roboto', sans-serif"
+    >
+      <!-- blog item wrapper  -->
+      <div class="pb-16 lg:flex justify-between items-start">
+        <!-- left  -->
+        <div class="mb-5 lg:w-3/4">
+          <div class="mb-5">
+            <h1 class="title">PROJECT ITEMS</h1>
+            <h2 class="title text-black text-xs">
+              HOME/BLOGS/<span class="title text-xs"
+                >BLOG TITEL, OVER EEN HELE INTERRESANTE</span
+              >
+            </h2>
+          </div>
+          <div class="lg:pr-10">
+            <img
+              class="rounded-2xl w-full"
+              src="./img/blog-item/blog-item-banner.png"
+              alt=""
+            />
+            <div class="lg:pr-10">
+              <h1 class="font-medium text-[40px] leading-10 my-3">
+                Blog titel, over een hele interresante onderwerp
+              </h1>
+              <div
+                class="flex justify-between items-center title text-[20px] pb-7"
+              >
+                <h3>Blog categorie</h3>
+                <p class="text-black italic">12-02-2022</p>
+              </div>
+              <p class="pragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                tempor bibendum blandit. Nullam vel iaculis ipsum, at vehicula
+                ligula. Vivamus tristique at ex non tincidunt. Donec id semper
+                est. ullam ac orci enim. Phasellus at faucibus ipsum. Phasellus
+                nec leo consequat, vulputate mi ut, volutpat iam. Sed nec varius
+                arcu, ut pretium mauris. Orci varius natoque penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus. Maecenas id ex
+                nec tellus volutpat malesuada. Fusce egestas, turpis ut
+                facilisis commodo, lectus velit mattis mi, eget euismod dui enim
+                auctor tellus.
+              </p>
+            </div>
+
+            <div>
+              <div class="py-7">
+                <img
+                  class="w-full"
+                  src="./img/blog-item/blog-item-main.png"
+                  alt=""
+                />
+              </div>
+              <p class="pragraph mb-5">
+                Nam eu lorem faucibus, euismod odio vitae, aliquet mauris. Sed
+                ultrices posuere eros, a lobortis justo pharetra eu. Sed
+                ultricies in ante nec volutpat. Maecenas in mauris et tortor
+                dapibus accumsan vel vitae massa. Aliquam erat volutpat.
+                Suspendisse at pharetra nibh. Nam hendrerit luctus ipsum nec
+                laoreet. Morbi tincidunt lacus molestie dolor commodo, ac
+                fermentum leo consectetur. Mauris ex erat, ultricies a mauris
+                quis, sodales lacinia diam. Nulla feugiat elit et elit ultricies
+                semper. Aliquam id nibh magna. Aenean et sollicitudin nunc. Cras
+                pharetra felis odio, id ultricies diam ornare sit amet.
+                Curabitur ultrices, justo in facilisis mollis, nulla lorem
+                tincidunt ligula, et dapibus lectus eros vel risus. Duis id
+                turpis a sapien sodales sodales. Pellentesque faucibus, lectus a
+                malesuada efficitur, nisi quam congue nulla, eget suscipit
+                mauris libero eu metus. Sed at ullamcorper sem, non ornare
+                felis. Proin sem massa, cursus eu ornare sed, scelerisque quis
+                massa. Cras non velit at velit congue scelerisque vel quis erat.
+                Sed pretium a ante a sollicitudin. Nulla facilisi. Nam ac
+                tristique odio. Curabitur auctor viverra malesuada. Cras semper
+                finibus elit. Nunc risus augue, vehicula eu nisl nec, aliquam
+                tempor ligula. Aliquam aliquet volutpat iaculis. Integer ornare
+                at dui ut bibendum. Etiam mattis tristique dolor, id dapibus
+                metus tincidunt sit amet. Duis scelerisque neque sit amet
+                molestie porta.
+              </p>
+
+              <div class="flex justify-start gap-x-3 md:gap-x-4">
+                <button class="btn-tag px-4 md:px-6">TAG</button>
+                <button class="btn-tag px-4 md:px-6">TAG</button>
+                <button class="btn-tag px-4 md:px-6">TAG</button>
+                <button class="btn-tag px-4 md:px-6">TAG</button>
+                <button class="btn-tag px-4 md:px-6">TAG</button>
+                <button class="btn-tag px-4 md:px-6">TAG</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- right  -->
+
+        <div class="mt-6">
+          <span class="title text-[12px] text-black block mb-5">ZIE OOK</span>
+          <div class="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-2 gap-x-6">
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single-blog-item  -->
+            <div>
+              <div
+                class="flex justify-between items-center mb-3 p-2 hover:shadow hover:shadow-gray-300"
+              >
+                <img
+                  class="rounded-2xl md:h-[130px] h-[120px] w-[120px] md:w-[130px] object-cover"
+                  src="./img/blog-item/blog-item1.png"
+                  alt=""
+                />
+                <div class="pl-2 w-full flex flex-col justify-between">
+                  <h3 class="text-[10px] text-[#A5ADAD] font-bold mb-1">
+                    10 min leestijd
+                  </h3>
+                  <h1 class="md:text-base text-xs font-bold leading-4 mb-1">
+                    Blog titel, over een hele <br />
+                    interresante onderwerp
+                  </h1>
+                  <p class="text-[10px] font-light mb-1 pr-10">
+                    Eerste paar regels uit de blog artikel. Kan ook meta
+                    beschrijving zijn die hier getoond wordt.
+                  </p>
+                  <div class="flex justify-start gap-x-14 items-center">
+                    <h3 class="cat-title">Blog Categorie</h3>
+                    <p class="cat-title text-black italic">
+                      12-02-2022 14:15:12
+                    </p>
+                  </div>
+                  <div class="flex justify-start lg:gap-x-2 gap-x-1 mt-1">
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                    <button class="btn-tag">TAG</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-[#FDE6D2] px-6 lg:px-0">
+      <!-- footer list   -->
+      <div
+        class="container mx-auto pt-11 pb-10 bg-no-repeat bg-right"
+        style="background-image: url(./img/home/footer.png)"
+      >
+        <div class="md:flex justify-start gap-x-24 lg:gap-x-44">
+          <!-- single-list  -->
+          <div class="mb-4">
+            <h3 class="text-base font-medium mb-1">Seneca techniek</h3>
+            <ul>
+              <li>
+                <a class="text-sm font-normal md:leading-6" href="#"
+                  >Link eerste pagina</a
+                >
+              </li>
+              <li>
+                <a class="text-sm font-normal md:leading-6" href="#"
+                  >Link tweede pagina</a
+                >
+              </li>
+              <li>
+                <a class="text-sm font-normal md:leading-6" href="#"
+                  >Link derde pagina</a
+                >
+              </li>
+              <li>
+                <a class="text-sm font-normal md:leading-6" href="#"
+                  >Link vierde pagina</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- single-list  -->
+          <div class="mb-4">
+            <h3 class="text-base font-medium mb-1">Laatste blog</h3>
+            <ul>
+              <li>
+                <a class="text-sm font-normal md:leading-6" href="#"
+                  >Laatste blog link</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- single-list  -->
+          <div class="mb-4">
+            <h3 class="text-base font-medium mb-1">Openingstijden</h3>
+            <ul>
+              <li>
+                <a class="text-sm font-normal md:leading-6" href="#"
+                  >Maandag - Vrijdag 09:00 - 17:00</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- copyright  -->
+        <div class="pt-64">
+          <p class="text-sm font-normal text-white text-center MD:ml-52">
+            © Seneca Techniek 2022. Alle rechten voorbehouden. Mede mogelijk
+            gemaakt door <span class="text-[#FABE8B] text-sm">NextDoorDev</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function Menu(e) {
+        let humbuegerBtn = document.getElementById('humburger-btn');
+
+        let closeBtn = document.getElementById('close-btn');
+        let list = document.querySelector('ul');
+
+        list.classList.toggle('top-[80px]');
+        list.classList.toggle('opacity-100');
+
+        humbuegerBtn.classList.toggle('hidden');
+        closeBtn.classList.toggle('hd1');
+      }
+    </script>
+  </body>
+</html>
